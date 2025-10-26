@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PromptSafe</title>
+  <link rel="stylesheet" href="./src/output.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Title with purple glow -->
+    <h1 class="title">PromptSafe</h1>
+    
+    <!-- Text boxes container -->
+    <div class="text-boxes">
+      <!-- First text box with generate button -->
+      <div class="text-box-container">
+        <textarea id="userInput" placeholder="Type something..." class="text-box input-box"></textarea>
+        <button id="generateBtn" class="generate-btn">Generate</button>
+      </div>
+      
+      <!-- Second text box -->
+      <textarea id="output" readonly class="text-box output-box"></textarea>
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById("userInput");
+    const output = document.getElementById("output");
+    const btn = document.getElementById("generateBtn");
+
+    btn.addEventListener("click", () => {
+      const text = input.value.trim();
+      output.value = text ? "You wrote: " + text : "⚠️ Please enter some text!";
+    });
+
+    input.addEventListener("keydown", (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "Enter") btn.click();
+    });
+  </script>
+</body>
+</html>

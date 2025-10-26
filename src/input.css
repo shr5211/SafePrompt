@@ -1,0 +1,129 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0b0c10;
+  color: #f2f5f7;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+/* Title with purple glow */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #A47CF3;
+  text-shadow: 
+    0 0 10px #A47CF3,
+    0 0 20px #A47CF3,
+    0 0 30px #A47CF3,
+    0 0 40px #A47CF3;
+  animation: glow-pulse 2s ease-in-out infinite alternate;
+  margin-bottom: 1rem;
+}
+
+@keyframes glow-pulse {
+  from {
+    text-shadow: 
+      0 0 10px #A47CF3,
+      0 0 20px #A47CF3,
+      0 0 30px #A47CF3,
+      0 0 40px #A47CF3;
+  }
+  to {
+    text-shadow: 
+      0 0 15px #A47CF3,
+      0 0 25px #A47CF3,
+      0 0 35px #A47CF3,
+      0 0 45px #A47CF3;
+  }
+}
+
+/* Text boxes container */
+.text-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Text box container with button */
+.text-box-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Text box styles */
+.text-box {
+  width: 100%;
+  height: 200px;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #333;
+  font-size: 1.125rem;
+  resize: none;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input-box {
+  background: #1a1b20;
+  color: #f1f5f9;
+}
+
+.input-box:focus {
+  border-color: #7c8cff;
+  box-shadow: 0 0 0 2px rgba(124, 140, 255, 0.2);
+}
+
+.output-box {
+  background: #121317;
+  color: #7c8cff;
+}
+
+/* Generate button */
+.generate-btn {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: #1C1A1C;
+  color: #AAAAAA;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.generate-btn:hover {
+  background: linear-gradient(0deg, #A47CF3, #683FEA);
+  color: white;
+  box-shadow: 
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 2px rgba(255, 255, 255, 0.2),
+    0px 0px 90px 0px #9917FF;
+  transform: translateY(-1px);
+}
